@@ -1,33 +1,19 @@
 package com.SmartManager.Model;
 
-//import java.util.ArrayList;
+import java.util.ArrayList;
 
 import java.util.*;
 
-/*import javax.persistence.CascadeType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;*/
+import javax.persistence.Table;
 
-public class User {
-	
-	private int id;
-	private String name;
-	private String email;
-	private String password;
-	private String role;
-	private boolean enabled;
-	private String imageurl;
-	private String about;
-	
-
-
-
-/*@Entity
+@Entity
 @Table(name="USER-INFO")
 public class User {
 	
@@ -45,7 +31,7 @@ public class User {
 	private String about;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private List<Contact> contact=new ArrayList<Contact>();*/
+	private List<Contact> contact=new ArrayList<Contact>();
 
 	public User(int id, String name, String email, String password, String role, boolean enabled, String imageurl,
 			String about, List<Contact> contact) {
@@ -58,8 +44,13 @@ public class User {
 		this.enabled = enabled;
 		this.imageurl = imageurl;
 		this.about = about;
-		//this.contact = contact;
+		this.contact = contact;
 	}
+
+	public User() {
+		super();
+	}
+
 
 	public int getId() {
 		return id;
@@ -125,13 +116,13 @@ public class User {
 		this.about = about;
 	}
 
-	/*public List<Contact> getContact() {
+	public List<Contact> getContact() {
 		return contact;
 	}
 
 	public void setContact(List<Contact> contact) {
 		this.contact = contact;
-	}*/
+	}
 
 	@Override
 	public String toString() {

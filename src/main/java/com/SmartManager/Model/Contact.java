@@ -1,6 +1,6 @@
 package com.SmartManager.Model;
 
-/*import javax.persistence.Column;
+import javax.persistence.Column;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,32 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-*/
-
-public class Contact {
-	
-	private int cid;
-	private String name;
-	private String nickname;
-	private String work;
-	private String email;
-	private String phone;
-	private String image;
-	private String description;
-	
 
 
-
-
-
-
-
-
-
-
-
-
-/*@Entity
+@Entity
 @Table(name="CONTACT-INFO")
 public class Contact {
 	
@@ -50,7 +27,7 @@ public class Contact {
 	private String description;
 	
 	@ManyToOne
-	private User user;*/
+	private User user;
 
 	public Contact(int cid, String name, String nickname, String work, String email, String phone, String image,
 			String description, User user) {
@@ -63,7 +40,11 @@ public class Contact {
 		this.phone = phone;
 		this.image = image;
 		this.description = description;
-		//this.user = user;
+		this.user = user;
+	}
+
+	public Contact() {
+		super();
 	}
 
 	public int getCid() {
@@ -130,13 +111,20 @@ public class Contact {
 		this.description = description;
 	}
 
-	/*public User getUser() {
+	public User getUser() {
 		return user;
 	}
 
 	public void setUser(User user) {
 		this.user = user;
-	}*/
+	}
+
+	@Override
+	public String toString() {
+		return "Contact [cid=" + cid + ", name=" + name + ", nickname=" + nickname + ", work=" + work + ", email="
+				+ email + ", phone=" + phone + ", image=" + image + ", description=" + description + ", user=" + user
+				+ "]";
+	}
 
 	
 
